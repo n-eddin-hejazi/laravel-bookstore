@@ -44,7 +44,7 @@
                                                                  class="text-default mb-0"
                                                                  data-abc="true">{{ $book->title }}</a>
                                                        </h6>
-                                                       <a href="#" class="text-muted" data-abc="true">
+                                                       <a href="{{ route('gallery.categories.show', $book->category) }}" class="text-muted" data-abc="true">
                                                             @if ($book->category != null)
                                                                  {{ $book->category->name }}
                                                             @endif
