@@ -28,7 +28,7 @@ class BookSeeder extends Seeder
             'number_of_pages' => '288',
             'price' => '17',
             'isbn' => '100000000000',
-            'cover_image' => 'images/cover/1.png',
+            'cover_image' => 'images/covers/1.png',
         ]);
         $book1->authors()->attach(Author::where('name', 'Fatima Fatima')->first());
 
@@ -41,7 +41,7 @@ class BookSeeder extends Seeder
             'number_of_pages' => '288',
             'price' => '17',
             'isbn' => '100000000000',
-            'cover_image' => 'images/cover/2.png',
+            'cover_image' => 'images/covers/2.png',
         ]);
         $book2->authors()->attach(Author::where('name', 'Mohammad Mohammad')->first());
 
@@ -54,7 +54,7 @@ class BookSeeder extends Seeder
             'number_of_pages' => '288',
             'price' => '25',
             'isbn' => '100000000000',
-            'cover_image' => 'images/cover/3.png',
+            'cover_image' => 'images/covers/3.png',
         ]);
         $book3->authors()->attach(Author::where('name', 'Omer Omer')->first());
 
@@ -67,7 +67,7 @@ class BookSeeder extends Seeder
             'number_of_pages' => '288',
             'price' => '20',
             'isbn' => '100000000000',
-            'cover_image' => 'images/cover/4.png',
+            'cover_image' => 'images/covers/4.png',
         ]);
         $book4->authors()->attach(Author::where('name', 'Majed Majed')->first());
 
@@ -80,7 +80,7 @@ class BookSeeder extends Seeder
             'number_of_pages' => '288',
             'price' => '13',
             'isbn' => '100000000000',
-            'cover_image' => 'images/cover/5.png',
+            'cover_image' => 'images/covers/5.png',
         ]);
         $book5->authors()->attach(Author::where('name', 'Fozi Fozi')->first());
 
@@ -93,7 +93,7 @@ class BookSeeder extends Seeder
             'number_of_pages' => '288',
             'price' => '14',
             'isbn' => '100000000000',
-            'cover_image' => 'images/cover/6.png',
+            'cover_image' => 'images/covers/6.png',
         ]);
         $book6->authors()->attach(Author::where('name', 'Zaid Zaid')->first());
     }
