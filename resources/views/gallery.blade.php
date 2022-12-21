@@ -9,7 +9,7 @@
 @endsection
 @section('content')
      <div class="container">
-        {{-- search section --}}
+          {{-- search section --}}
           <div class="row">
                <form action="{{ route('search') }}" method="GET">
                     <div class="row d-flex justify-content-center">
@@ -29,16 +29,21 @@
                                         <div class="card mb-3">
                                              <div class="">
                                                   <div class="card-img-actions">
-                                                       <img src="{{ asset('storage/' . $book->cover_image) }}"
-                                                            class="card-img img-fluid" width="96" height="350"
-                                                            alt="{{ $book->title }}">
+                                                       <a href="{{ route('book.details', $book) }}">
+                                                            <img src="{{ asset('storage/' . $book->cover_image) }}"
+                                                                 class="card-img img-fluid" width="96" height="350"
+                                                                 alt="{{ $book->title }}">
+                                                       </a>
                                                   </div>
+
                                              </div>
                                              <div class="card-body bg-light text-center">
                                                   <div class="mb-2">
-                                                       <h6 class="font-weight-semibold mb-2 card-title"><a href="#"
+                                                       <h6 class="font-weight-semibold mb-2 card-title"><a
+                                                                 href="{{ route('book.details', $book) }}"
                                                                  class="text-default mb-0"
-                                                                 data-abc="true">{{ $book->title }}</a></h6>
+                                                                 data-abc="true">{{ $book->title }}</a>
+                                                       </h6>
                                                        <a href="#" class="text-muted" data-abc="true">
                                                             @if ($book->category != null)
                                                                  {{ $book->category->name }}
