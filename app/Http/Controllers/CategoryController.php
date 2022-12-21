@@ -86,7 +86,8 @@ class CategoryController extends Controller
     public function result(Category $category)
     {
         $books = $category->books()->paginate(12);
-        $title = 'Books belongs to ' . $category->name;
+        $title = 'Books belongs to: ' . $category->name;
+
         return view('gallery', compact('books', 'title'));
     }
 
@@ -94,6 +95,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all()->sortBy('name');
         $title = 'Categories';
+
         return view('categories.index', compact('categories', 'title'));
     }
 
@@ -103,6 +105,5 @@ class CategoryController extends Controller
         $title = $request->term . ' search results';
 
         return view('categories.index', compact('categories', 'title'));
-
     }
 }

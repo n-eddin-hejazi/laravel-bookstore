@@ -82,4 +82,28 @@ class AuthorController extends Controller
     {
         //
     }
+
+    public function result(Author $author)
+    {
+        $books = $author->books()->paginate(12);
+        $title = 'Books belongs to: ' . $author->name;
+
+        return view('gallery', compact('books', 'title'));
+    }
+
+    public function list()
+    {
+        $authors = Author::all()->sortBy('name');
+        $title = 'Authors';
+
+        return view('authors.index', compact('authors', 'title'));
+    }
+
+    public function search(Request $request)
+    {
+        $authors = Author::where('name', 'like', "%{$request->term}%")->get()->sortBy('name');
+        $title = $request->term . ' search results';
+
+        return view('authors.index', compact('authors', 'title'));
+    }
 }

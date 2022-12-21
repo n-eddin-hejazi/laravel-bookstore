@@ -42,10 +42,10 @@
                                    <a href="{{ route('gallery.categories.index') }}" class="nav-link"><i class="fas fa-list"></i> Categories</a>
                               </li>
                               <li class="nav-item">
-                                   <a href="#" class="nav-link"><i class="fas fa-table"></i> Publishers</a>
+                                   <a href="{{ route('gallery.publishers.index') }}" class="nav-link"><i class="fas fa-table"></i> Publishers</a>
                               </li>
                               <li class="nav-item">
-                                   <a href="#" class="nav-link"><i class="fas fa-pen"></i> Authors</a>
+                                   <a href="{{ route('gallery.authors.index') }}" class="nav-link"><i class="fas fa-pen"></i> Authors</a>
                               </li>
                               <li class="nav-item">
                                    <a href="#" class="nav-link"><i class="fas fa-basket-shopping"></i> My

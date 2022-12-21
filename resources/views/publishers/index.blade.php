@@ -4,10 +4,10 @@
           <div class="row justify-content-center">
                <div class="col-md-8">
                     <div class="card">
-                         <div class="card-header">Book Categories</div>
+                         <div class="card-header">Publishers</div>
                          <div class="card-body">
                               <div class="row justify-content-center">
-                                   <form action="{{ route('gallery.categories.search') }}" method="GET">
+                                   <form action="{{ route('gallery.publishers.search') }}" method="GET">
                                         <div class="row d-flex justify-content-center">
                                              <input type="text" name="term" placeholder="Search a book..."
                                                   class="col-3 mx-sm-3 mb-2">
@@ -20,13 +20,13 @@
                          </div>
 
                          <h3 class="mb-4 ml-3">{{ $title }}</h3>
-                         @if ($categories->count())
+                         @if ($publishers->count())
                               <ul class="list-group p-3 border-0">
-                                   @foreach ($categories as $category)
-                                        <a href="{{ route('gallery.categories.show', $category) }}"
+                                   @foreach ($publishers as $publisher)
+                                        <a href="{{ route('gallery.publishers.show', $publisher) }}"
                                              style="color:grey;  text-decoration: none;">
                                              <li class="list-group-item">
-                                                  {{ $category->name }} ({{ $category->books->count() }})
+                                                  {{ $publisher->name }} ({{ $publisher->books->count() }})
                                              </li>
                                         </a>
                                    @endforeach
