@@ -89,4 +89,20 @@ class CategoryController extends Controller
         $title = 'Books belongs to ' . $category->name;
         return view('gallery', compact('books', 'title'));
     }
+
+    public function list()
+    {
+        $categories = Category::all()->sortBy('name');
+        $title = 'Categories';
+        return view('categories.index', compact('categories', 'title'));
+    }
+
+    public function search(Request $request)
+    {
+        $categories = Category::where('name', 'like', "%{$request->term}%")->get()->sortBy('name');
+        $title = $request->term . ' search results';
+
+        return view('categories.index', compact('categories', 'title'));
+
+    }
 }

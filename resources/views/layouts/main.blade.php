@@ -39,7 +39,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                          <ul class="navbar-nav mx-auto">
                               <li class="nav-item">
-                                   <a href="#" class="nav-link"><i class="fas fa-list"></i> Categories</a>
+                                   <a href="{{ route('gallery.categories.index') }}" class="nav-link"><i class="fas fa-list"></i> Categories</a>
                               </li>
                               <li class="nav-item">
                                    <a href="#" class="nav-link"><i class="fas fa-table"></i> Publishers</a>
