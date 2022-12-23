@@ -4,7 +4,7 @@
 @endsection
 @section('heading') Books @endsection
 @section('content')
-<a class="btn btn-primary" href="{{ route('books.create') }}"><i class="fas fa-plus"></i>Add new book</a>
+<a class="btn btn-primary" href="{{ route('books.create') }}"><i class="fas fa-plus"></i> Add new book</a>
 <hr>
 <div class="row">
     <div class="col-md-12">
@@ -38,8 +38,8 @@
                         <td>{{ $book->publisher != null ? $book->publisher->name : '' }}</td>
                         <td>{{ $book->price }}$</td>
                         <td>
-                            <a class="btn btn-info btn-sm" href="#"><i class="fa fa-edit"></i> Edit</a>
-                            <form method="POST" action="#" class="d-inline-block">
+                            <a class="btn btn-info btn-sm" href="{{ route('books.edit', $book) }}"><i class="fa fa-edit"></i> Edit</a>
+                            <form method="POST" action="{{ route('books.destroy', $book) }}" class="d-inline-block">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure ?')"><i class="fa fa-trash"></i> Delete</button>
