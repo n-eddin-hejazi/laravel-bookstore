@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item {{ request()->is('admin') ? 'active' : '' }}">
-           <a class="nav-link" href="#">
+           <a class="nav-link" href="{{ route('admin.index') }}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
       </li>
@@ -24,7 +24,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item {{ request()->is('admin/books*') ? 'active' : '' }}">
-           <a class="nav-link" href="#">
+           <a class="nav-link" href="{{ route('books.index') }}">
                 <i class="fas fa-book-open"></i>
                 <span>Books</span>
            </a>
