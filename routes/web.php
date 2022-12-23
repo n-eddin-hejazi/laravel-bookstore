@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
@@ -42,8 +43,9 @@ Route::get('/authors/search', [AuthorController::class, 'search'])->name('galler
 Route::get('/authors/{author}', [AuthorController::class, 'result'])->name('gallery.authors.show');
 
 
-Route::get('/admin', function(){
-    return view('theme.default');
-});
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/books', [BookController::class, 'index'])->name('books.index');
+
+
 
 
