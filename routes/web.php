@@ -44,3 +44,4 @@ Route::get('/authors/{author}', [AuthorController::class, 'result'])->name('gall
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::resource('/admin/books', BookController::class);
+Route::resource('/admin/categories', CategoryController::class);
