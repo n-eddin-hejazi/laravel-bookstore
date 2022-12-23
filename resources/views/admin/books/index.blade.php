@@ -4,7 +4,7 @@
 @endsection
 @section('heading') Books @endsection
 @section('content')
-<a class="btn btn-primary" href="#"><i class="fas fa-plus"></i>Add new book</a>
+<a class="btn btn-primary" href="{{ route('books.create') }}"><i class="fas fa-plus"></i>Add new book</a>
 <hr>
 <div class="row">
     <div class="col-md-12">
@@ -24,7 +24,7 @@
             <tbody>
                 @foreach($books as $book)
                     <tr>
-                        <td><a href="#">{{ $book->title }}</a></td>
+                        <td><a href="{{ route('books.show', $book) }}">{{ $book->title }}</a></td>
                         <td>{{ $book->isbn }}</td>
                         <td>{{ $book->category != null ? $book->category->name : '' }}</td>
                         <td>
