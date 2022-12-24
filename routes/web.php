@@ -46,3 +46,4 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::resource('/admin/books', BookController::class);
 Route::resource('/admin/categories', CategoryController::class);
 Route::resource('/admin/publishers', PublisherController::class);
+Route::resource('/admin/authors', AuthorController::class);

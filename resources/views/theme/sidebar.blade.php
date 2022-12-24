@@ -40,7 +40,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item {{ request()->is('admin/authors*') ? 'active' : '' }}">
-           <a class="nav-link" href="">
+           <a class="nav-link" href="{{ route('authors.index') }}">
                 <i class="fas fa-pen-fancy"></i>
                 <span>Authors</span>
            </a>
