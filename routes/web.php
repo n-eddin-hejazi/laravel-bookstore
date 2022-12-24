@@ -33,6 +33,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 Route::get('/', [GalleryController::class, 'index'])->name('gallery.index');
 Route::get('/search', [GalleryController::class, 'search'])->name('search');
 Route::get('/book/{book}', [BookController::class, 'details'])->name('book.details');
+Route::post('/book/{book}/rate', [BookController::class, 'rate'])->name('book.rate');
+
 Route::get('/categoies', [CategoryController::class, 'list'])->name('gallery.categories.index');
 Route::get('/categoies/search', [CategoryController::class, 'search'])->name('gallery.categories.search');
 Route::get('/categoies/{category}', [CategoryController::class, 'result'])->name('gallery.categories.show');
