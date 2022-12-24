@@ -70,6 +70,9 @@
                                                   class="w-8 h-8 rounded-full object-cover">
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right px-2 text-left mt-2">
+                                            @can('update-books')
+                                                <a href="{{ route('admin.index') }}" class="dropdown-item">Dashboard</a>
+                                            @endcan
                                             <div class="pt-4 pb-1 border-t border-gray-200">
                                                 <div class="flex items-center px-4">
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PublisherController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,4 +49,5 @@ Route::prefix('/admin')->middleware('can:update-books')->group(function(){
     Route::resource('/categories', CategoryController::class);
     Route::resource('/publishers', PublisherController::class);
     Route::resource('/authors', AuthorController::class);
+    Route::resource('/users', UserController::class)->middleware('can:update-users');
 });
