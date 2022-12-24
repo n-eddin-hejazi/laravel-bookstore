@@ -42,8 +42,10 @@ Route::get('/authors', [AuthorController::class, 'list'])->name('gallery.authors
 Route::get('/authors/search', [AuthorController::class, 'search'])->name('gallery.authors.search');
 Route::get('/authors/{author}', [AuthorController::class, 'result'])->name('gallery.authors.show');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-Route::resource('/admin/books', BookController::class);
-Route::resource('/admin/categories', CategoryController::class);
-Route::resource('/admin/publishers', PublisherController::class);
-Route::resource('/admin/authors', AuthorController::class);
+Route::prefix('/admin')->middleware('can:update-books')->group(function(){
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::resource('/books', BookController::class);
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/publishers', PublisherController::class);
+    Route::resource('/authors', AuthorController::class);
+});
