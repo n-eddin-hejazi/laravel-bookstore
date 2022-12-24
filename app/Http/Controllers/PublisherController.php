@@ -14,7 +14,9 @@ class PublisherController extends Controller
      */
     public function index()
     {
-        //
+        $publishers = Publisher::all();
+        return view('admin.publishers.index', compact('publishers'));
+
     }
 
     /**
@@ -24,7 +26,8 @@ class PublisherController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.publishers.create');
+
     }
 
     /**
@@ -35,7 +38,15 @@ class PublisherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['name' => 'required']);
+        $publisher = new Publisher;
+        $publisher->name = $request->name;
+        $publisher->address = $request->address;
+        $publisher->save();
+        session()->flash('flash_message',  'Publisher Added Successfully.');
+
+        return redirect(route('publishers.index'));
+
     }
 
     /**
@@ -46,7 +57,7 @@ class PublisherController extends Controller
      */
     public function show(Publisher $publisher)
     {
-        //
+
     }
 
     /**
@@ -57,7 +68,7 @@ class PublisherController extends Controller
      */
     public function edit(Publisher $publisher)
     {
-        //
+        return view('admin.publishers.edit', compact('publisher'));
     }
 
     /**
@@ -69,7 +80,14 @@ class PublisherController extends Controller
      */
     public function update(Request $request, Publisher $publisher)
     {
-        //
+        $this->validate($request, ['name' => 'required']);
+        $publisher->name = $request->name;
+        $publisher->address = $request->address;
+        $publisher->save();
+        session()->flash('flash_message',  'Publisher Edited Successfully.');
+
+        return redirect(route('publishers.index'));
+
     }
 
     /**
@@ -80,7 +98,11 @@ class PublisherController extends Controller
      */
     public function destroy(Publisher $publisher)
     {
-        //
+        $publisher->delete();
+        session()->flash('flash_message', 'Publisher Deleted Successfully.');
+
+        return redirect(route('publishers.index'));
+
     }
 
     public function result(Publisher $publisher)

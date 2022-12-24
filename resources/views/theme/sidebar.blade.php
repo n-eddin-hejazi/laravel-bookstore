@@ -40,7 +40,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item {{ request()->is('admin/authors*') ? 'active' : '' }}">
-           <a class="nav-link" href="#">
+           <a class="nav-link" href="">
                 <i class="fas fa-pen-fancy"></i>
                 <span>Authors</span>
            </a>
@@ -48,7 +48,7 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item {{ request()->is('admin/publishers*') ? 'active' : '' }}">
-           <a class="nav-link" href="#">
+           <a class="nav-link" href="{{ route('publishers.index') }}">
                 <i class="fas fa-table"></i>
                 <span>Publishers</span></a>
       </li>

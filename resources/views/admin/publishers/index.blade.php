@@ -1,8 +1,8 @@
 @extends('theme.default')
 @section('head') <link href="{{ asset('theme/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> @endsection
-@section('heading') Show Categories @endsection
+@section('heading') Show Punlishers @endsection
 @section('content')
-<a class="btn btn-primary" href="{{ route('categories.create') }}"><i class="fas fa-plus"></i> Add New Category</a>
+<a class="btn btn-primary" href="{{ route('publishers.create') }}"><i class="fas fa-plus"></i> Add New Publisher</a>
 <hr>
 <div class="row">
     <div class="col-md-12">
@@ -10,18 +10,18 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Description</th>
+                    <th>Address</th>
                     <th>Options</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($categories as $category)
+                @foreach($publishers as $publisher)
                     <tr>
-                        <td>{{ $category->name }}</td>
-                        <td>{{ $category->description }}</td>
+                        <td>{{ $publisher->name }}</td>
+                        <td>{{ $publisher->address }}</td>
                         <td>
-                            <a class="btn btn-info btn-sm" href="{{ route('categories.edit', $category) }}"><i class="fa fa-edit"></i> Edit</a>
-                            <form method="POST" action="{{ route('categories.destroy', $category) }}" class="d-inline-block">
+                            <a class="btn btn-info btn-sm" href="{{ route('publishers.edit', $publisher) }}"><i class="fa fa-edit"></i> Edit</a>
+                            <form method="POST" action="{{ route('publishers.destroy', $publisher) }}" class="d-inline-block">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure ?')"><i class="fa fa-trash"></i> Delete</button>
@@ -34,7 +34,6 @@
     </div>
 </div>
 @endsection
-
 @section('script')
 <!-- Page level plugins -->
 <script src="{{ asset('theme/vendor/datatables/jquery.dataTables.min.js') }}"></script>
